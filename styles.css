@@ -1,0 +1,3511 @@
+/* CSS Variables for Color Scheme */
+:root {
+    --primary-violet: #6b46c1;
+    --light-violet: #8b5cf6;
+    --dark-violet: #4c1d95;
+    --gold: #f59e0b;
+    --light-gold: #fbbf24;
+    --dark-gold: #d97706;
+    --black: #1f2937;
+    --dark-gray: #374151;
+    --light-gray: #f8fafc;
+    --white: #ffffff;
+    --text-gray: #6b7280;
+    --border-gray: #e5e7eb;
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: var(--black);
+    background-color: var(--white);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Styles */
+.header {
+    background-color: var(--white);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 20px;
+}
+
+.logo-img {
+    height: 50px;
+    width: auto;
+}
+
+/* Desktop Navigation */
+.desktop-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    align-items: center;
+}
+
+.desktop-nav a {
+    text-decoration: none;
+    color: var(--black);
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.desktop-nav a:hover {
+    background-color: var(--light-violet);
+    color: var(--white);
+}
+
+/* Dropdown Styles */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--white);
+    min-width: 300px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 1rem;
+    z-index: 1001;
+}
+
+.dropdown:hover .dropdown-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+}
+
+.dropdown-content a {
+    color: var(--black);
+    padding: 0.75rem 1rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--light-violet);
+    color: var(--white);
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--black);
+    margin: 3px 0;
+    transition: 0.3s;
+    border-radius: 2px;
+}
+
+/* Mobile Navigation */
+.mobile-nav {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 300px;
+    height: 100vh;
+    background-color: var(--white);
+    z-index: 1002;
+    transition: left 0.3s ease;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-nav.active {
+    left: 0;
+}
+
+.mobile-nav-content {
+    padding: 5rem 1rem 1rem;
+}
+
+.mobile-nav ul {
+    list-style: none;
+}
+
+.mobile-nav li {
+    margin-bottom: 1rem;
+}
+
+.mobile-nav a {
+    text-decoration: none;
+    color: var(--black);
+    font-weight: 500;
+    padding: 1rem;
+    display: block;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.mobile-nav a:hover {
+    background-color: var(--light-violet);
+    color: var(--white);
+}
+
+.mobile-dropdown {
+    border-bottom: 1px solid var(--border-gray);
+    padding-bottom: 1rem;
+}
+
+.mobile-dropdown-toggle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.mobile-dropdown-content {
+    display: none;
+    padding-left: 1rem;
+    margin-top: 0.5rem;
+}
+
+.mobile-dropdown-content.active {
+    display: block;
+}
+
+.mobile-dropdown-content a {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+}
+
+/* Main Content */
+main {
+    margin-top: 80px;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, var(--primary-violet) 0%, var(--dark-violet) 100%);
+    color: var(--white);
+    padding: 6rem 0;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--gold);
+}
+
+.hero-description {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    opacity: 0.9;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Button Styles */
+.btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.btn-primary {
+    background-color: var(--gold);
+    color: var(--black);
+    border-color: var(--gold);
+}
+
+.btn-primary:hover {
+    background-color: var(--dark-gold);
+    border-color: var(--dark-gold);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--white);
+    border-color: var(--white);
+}
+
+.btn-secondary:hover {
+    background-color: var(--white);
+    color: var(--primary-violet);
+    transform: translateY(-2px);
+}
+
+/* About Section */
+.about {
+    padding: 5rem 0;
+    background-color: var(--light-gray);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--black);
+    margin-bottom: 0.5rem;
+}
+
+.section-header p {
+    color: var(--gold);
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: justify;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: var(--text-gray);
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-violet);
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    color: var(--text-gray);
+    font-weight: 500;
+}
+
+/* Services Preview */
+.services-preview {
+    padding: 5rem 0;
+    background-color: var(--white);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.service-card {
+    background-color: var(--light-gray);
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border-color: var(--primary-violet);
+}
+
+.service-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary-violet), var(--gold));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    color: var(--white);
+    font-size: 1.5rem;
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--black);
+}
+
+.service-card p {
+    color: var(--text-gray);
+    margin-bottom: 1.5rem;
+}
+
+.service-link {
+    color: var(--primary-violet);
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.service-link:hover {
+    color: var(--dark-violet);
+    gap: 0.7rem;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--black);
+    color: var(--white);
+    padding: 3rem 0 1rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-section h3,
+.footer-section h4 {
+    margin-bottom: 1rem;
+    color: var(--gold);
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.footer-logo-img {
+    height: 40px;
+    width: auto;
+}
+
+.footer-section p {
+    color: #d1d5db;
+    margin-bottom: 1rem;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section ul li a {
+    color: #d1d5db;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: var(--gold);
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-link {
+    width: 40px;
+    height: 40px;
+    background-color: var(--primary-violet);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    background-color: var(--gold);
+    transform: translateY(-2px);
+}
+
+.contact-info p {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.contact-info i {
+    color: var(--gold);
+    width: 20px;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid #374151;
+    color: #9ca3af;
+}
+
+/* Contact Page Styles */
+.page-header {
+    text-align: center;
+    padding: 3rem 0;
+    background: linear-gradient(135deg, var(--primary-violet) 0%, var(--dark-violet) 100%);
+    color: var(--white);
+    margin-bottom: 3rem;
+}
+
+.page-header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.page-header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 4rem;
+}
+
+.contact-info-section h2,
+.contact-form-section h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--black);
+}
+
+.contact-info-section p {
+    color: var(--text-gray);
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.contact-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--primary-violet), var(--gold));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.contact-text h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--black);
+}
+
+.contact-text p {
+    color: var(--text-gray);
+    margin: 0;
+}
+
+/* Contact Form */
+.contact-form-section {
+    background-color: var(--light-gray);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--black);
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid var(--border-gray);
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    font-family: 'Inter', sans-serif;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--primary-violet);
+    box-shadow: 0 0 0 3px rgba(107, 70, 193, 0.1);
+}
+
+.contact-form .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Map Styles */
+.map-section {
+    margin-bottom: 4rem;
+}
+
+.map-section h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: var(--black);
+}
+
+.google-map {
+    width: 100%;
+    height: 400px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border: 2px solid var(--border-gray);
+}
+
+/* FAQ Section */
+.faq-section {
+    margin-bottom: 3rem;
+}
+
+.faq-section h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: var(--black);
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.faq-item {
+    background-color: var(--light-gray);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-violet);
+}
+
+.faq-item h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--black);
+}
+
+.faq-item p {
+    color: var(--text-gray);
+    line-height: 1.6;
+}
+
+/* Service Page Styles */
+.service-page-header {
+    background: linear-gradient(135deg, var(--primary-violet) 0%, var(--dark-violet) 100%);
+    color: var(--white);
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.service-header-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.service-icon-large {
+    width: 80px;
+    height: 80px;
+    background-color: var(--gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 2rem;
+    color: var(--black);
+    font-size: 2rem;
+}
+
+.service-page-header h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.service-page-header p {
+    font-size: 1.3rem;
+    opacity: 0.9;
+}
+
+.service-overview {
+    padding: 4rem 0;
+    background-color: var(--white);
+}
+
+.service-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+}
+
+.service-text h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--black);
+}
+
+.service-text p {
+    font-size: 1.1rem;
+    color: var(--text-gray);
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+}
+
+.service-features h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 2rem 0 1rem;
+    color: var(--black);
+}
+
+.service-features ul {
+    list-style: none;
+    padding: 0;
+}
+
+.service-features li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-gray);
+    font-size: 1.1rem;
+}
+
+.service-features i {
+    color: var(--gold);
+    font-size: 1.2rem;
+    width: 20px;
+}
+
+.service-benefits h3 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    color: var(--black);
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.benefit-item {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: var(--light-gray);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.benefit-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.benefit-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary-violet), var(--gold));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    color: var(--white);
+    font-size: 1.5rem;
+}
+
+.benefit-item h4 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--black);
+}
+
+.benefit-item p {
+    color: var(--text-gray);
+    margin: 0;
+}
+
+/* Service Process */
+.service-process {
+    padding: 4rem 0;
+    background-color: var(--light-gray);
+}
+
+.service-process h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--black);
+}
+
+.process-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.process-step {
+    text-align: center;
+    position: relative;
+}
+
+.step-number {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary-violet), var(--gold));
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 auto 1rem;
+}
+
+.process-step h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--black);
+}
+
+.process-step p {
+    color: var(--text-gray);
+    margin: 0;
+}
+
+/* Service CTA */
+.service-cta {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, var(--primary-violet) 0%, var(--dark-violet) 100%);
+    color: var(--white);
+    text-align: center;
+}
+
+.service-cta h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.service-cta p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.service-cta .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Active Navigation Link */
+.desktop-nav a.active,
+.mobile-nav a.active {
+    background-color: var(--primary-violet);
+    color: var(--white);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .desktop-nav {
+        display: none;
+    }
+    
+    .hamburger {
+        display: flex;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .hero-description {
+        font-size: 1rem;
+    }
+    
+    .section-header h2 {
+        font-size: 2rem;
+    }
+    
+    .stats {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .footer-logo {
+        justify-content: center;
+    }
+    
+    /* Contact Page Mobile Styles */
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .contact-form .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .faq-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .google-map {
+        height: 300px;
+    }
+    
+    /* Service Page Mobile Styles */
+    .service-page-header {
+        padding: 3rem 0;
+    }
+    
+    .service-page-header h1 {
+        font-size: 2rem;
+    }
+    
+    .service-page-header p {
+        font-size: 1.1rem;
+    }
+    
+    .service-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .service-text h2 {
+        font-size: 2rem;
+    }
+    
+    .service-benefits h3 {
+        font-size: 1.5rem;
+    }
+    
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .service-process h2 {
+        font-size: 2rem;
+    }
+    
+    .process-steps {
+        grid-template-columns: 1fr;
+    }
+    
+    .service-cta h2 {
+        font-size: 2rem;
+    }
+    
+    .service-cta .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    /* Information Systems Control Mobile Styles */
+    @media (max-width: 768px) {
+        .objectives-grid {
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+    
+        .objective-item {
+            padding: 1rem;
+        }
+    
+        .audit-objectives-section,
+        .audit-benefits-section {
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+    
+        .benefit-item-detailed {
+            padding: 1rem;
+        }
+    
+        .benefit-header {
+            flex-direction: column;
+            gap: 0.5rem;
+            align-items: flex-start;
+        }
+    
+        .benefit-header strong {
+            font-size: 1rem;
+            display: block;
+            margin-top: 0.5rem;
+        }
+    
+        /* IT Project Management Mobile Styles */
+        .responsibilities-grid {
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+    
+        .responsibility-item {
+            padding: 1rem;
+        }
+    
+        .vizzual-responsibilities {
+            padding: 1.5rem;
+        }
+    
+        .vizzual-responsibilities h3 {
+            font-size: 1.4rem;
+        }
+    
+        /* Business Analysis Mobile Styles */
+        .ba-responsibilities-grid {
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+    
+        .ba-responsibility-item {
+            padding: 1rem;
+        }
+    
+        .vizzual-responsibilities-ba,
+        .ba-benefits-detailed {
+            padding: 1.5rem;
+        }
+    
+        .ba-benefits-detailed h3 {
+            font-size: 1.5rem;
+        }
+    
+        .ba-highlight {
+            padding: 1.5rem;
+        }
+    
+        /* Data Analytics Mobile Styles */
+        .da-benefits-grid {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+    
+        .da-benefit-item {
+            padding: 1.5rem;
+        }
+    
+        .da-benefits-section {
+            padding: 1.5rem;
+        }
+    
+        .da-benefits-section h3 {
+            font-size: 1.5rem;
+        }
+    
+        /* Excel for Accountants Mobile Styles */
+        .features-grid {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+    
+        .feature-item {
+            padding: 1rem;
+            text-align: left;
+        }
+    
+        .feature-icon {
+            margin: 0 0 1rem 0;
+        }
+    
+        .audience-grid {
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+    
+        .excel-features,
+        .target-audience {
+            padding: 1.5rem;
+        }
+    
+        .excel-features h3,
+        .target-audience h3 {
+            font-size: 1.4rem;
+        }
+    
+        /* Power BI Mobile Styles */
+        .structure-grid,
+        .outcomes-grid {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+    
+        .structure-item,
+        .outcome-item {
+            padding: 1.5rem;
+        }
+    
+        .course-structure,
+        .learning-outcomes,
+        .target-audience-pbi,
+        .certification-info {
+            padding: 1.5rem;
+        }
+    
+        .course-structure h3,
+        .learning-outcomes h3,
+        .target-audience-pbi h3,
+        .certification-info h3 {
+            font-size: 1.4rem;
+        }
+    
+        /* Business Data Analytics Mobile Styles */
+        .topics-grid {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+    
+        .topic-item {
+            padding: 1.5rem;
+        }
+    
+        .endorsement-badge {
+            flex-direction: column;
+            gap: 1rem;
+            text-align: center;
+        }
+    
+        .audience-list {
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+    
+        .outcomes-list {
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+    
+        .cbda-cert {
+            flex-direction: column;
+            gap: 1rem;
+            text-align: center;
+        }
+    
+        .course-topics,
+        .target-audience-bda,
+        .certification-section,
+        .learning-outcomes-bda,
+        .course-requirements {
+            padding: 1.5rem;
+        }
+    
+        .course-topics h3,
+        .target-audience-bda h3,
+        .certification-section h3,
+        .learning-outcomes-bda h3,
+        .course-requirements h3 {
+            font-size: 1.4rem;
+        }
+    
+        /* ITIL Foundation Mobile Styles */
+        .learning-grid {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+    
+        .learning-item {
+            padding: 1.5rem;
+        }
+    
+        .audience-types {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+    
+        .professionals-grid {
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+        }
+    
+        .outcomes-numbered {
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+    
+        .itil-learning,
+        .target-audience-itil,
+        .certification-prep,
+        .it-professionals,
+        .learning-outcomes-itil,
+        .course-requirements-itil {
+            padding: 1.5rem;
+        }
+    
+        .itil-learning h3,
+        .target-audience-itil h3,
+        .certification-prep h3,
+        .it-professionals h3,
+        .learning-outcomes-itil h3,
+        .course-requirements-itil h3 {
+            font-size: 1.4rem;
+        }
+    
+        /* Project Management Mobile Styles */
+        .lessons-grid {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+    
+        .lesson-item {
+            padding: 1.5rem;
+        }
+    
+        .critical-lessons,
+        .pm-program,
+        .career-advancement {
+            padding: 1.5rem;
+        }
+    
+        .critical-lessons h3,
+        .program-highlight h3,
+        .advancement-highlight h3 {
+            font-size: 1.4rem;
+        }
+    }
+    
+    /* Overview Pages Mobile Styles */
+    @media (max-width: 768px) {
+        .overview-intro h2 {
+            font-size: 2rem;
+        }
+        
+        .overview-intro p {
+            font-size: 1.1rem;
+        }
+        
+        .services-grid-overview,
+        .training-grid-overview {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+        
+        .service-card-overview,
+        .training-card-overview {
+            padding: 1.5rem;
+        }
+        
+        .service-card-overview h3,
+        .training-card-overview h3 {
+            font-size: 1.2rem;
+        }
+        
+        .why-choose-us h2,
+        .training-benefits h2 {
+            font-size: 2rem;
+        }
+        
+        .why-choose-grid,
+        .training-benefits-grid {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+        
+        .group-training h2 {
+            font-size: 2rem;
+        }
+        
+        .group-benefits {
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .services-cta h2,
+        .training-cta h2 {
+            font-size: 2rem;
+        }
+    }
+}
+
+/* Training Course Page Styles */
+.course-details {
+    background-color: var(--light-gray);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 2rem 0;
+}
+
+.course-details h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--black);
+}
+
+.detail-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border-gray);
+}
+
+.detail-item:last-child {
+    border-bottom: none;
+}
+
+.detail-label {
+    font-weight: 600;
+    color: var(--black);
+}
+
+.detail-value {
+    color: var(--text-gray);
+}
+
+.course-modules {
+    padding: 4rem 0;
+    background-color: var(--white);
+}
+
+.course-modules h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--black);
+}
+
+.modules-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.module {
+    background-color: var(--light-gray);
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.module-header {
+    background: linear-gradient(135deg, var(--primary-violet), var(--gold));
+    color: var(--white);
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.module-header h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.module-duration {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.module-content {
+    padding: 1.5rem;
+    list-style: none;
+}
+
+.module-content li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: var(--text-gray);
+    line-height: 1.6;
+}
+
+.module-content li:before {
+    content: "•";
+    color: var(--gold);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* Information Systems Control Page Styles */
+.overview-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.overview-text {
+    margin-bottom: 3rem;
+}
+
+.overview-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-gray);
+    margin-bottom: 1.5rem;
+}
+
+.audit-objectives-section,
+.audit-benefits-section {
+    margin: 3rem 0;
+    padding: 2rem;
+    background-color: var(--light-gray);
+    border-radius: 10px;
+    border-left: 4px solid var(--primary-violet);
+}
+
+.audit-objectives-section h3,
+.audit-benefits-section h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--black);
+    margin-bottom: 2rem;
+}
+
+.objectives-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.objective-item {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.objective-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.objective-number {
+    width: 30px;
+    height: 30px;
+    background: linear-gradient(135deg, var(--primary-violet), var(--gold));
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+}
+
+.objective-text {
+    flex: 1;
+    line-height: 1.6;
+}
+
+.objective-text strong {
+    color: var(--primary-violet);
+    font-weight: 600;
+}
+
+.objectives-summary {
+    font-size: 1.1rem;
+    color: var(--text-gray);
+    font-style: italic;
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--white);
+    border-radius: 8px;
+    margin-top: 1.5rem;
+}
+
+.benefits-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.benefit-item-detailed {
+    background-color: var(--white);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid var(--gold);
+    transition: all 0.3s ease;
+}
+
+.benefit-item-detailed:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.benefit-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.benefit-number {
+    width: 30px;
+    height: 30px;
+    background: linear-gradient(135deg, var(--gold), var(--primary-violet));
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+    margin-top: 0.2rem;
+}
+
+.benefit-header strong {
+    color: var(--primary-violet);
+    font-size: 1.1rem;
+    line-height: 1.4;
+}
+
+.benefit-item-detailed p {
+    color: var(--text-gray);
+    line-height: 1.7;
+    margin: 0;
+    font-size: 1rem;
+}
+
+/* IT Project Management Page Styles */
+.itpm-overview {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.itpm-intro {
+    margin-bottom: 3rem;
+}
+
+.itpm-intro p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-gray);
+    margin-bottom: 1.5rem;
+}
+
+.vizzual-responsibilities {
+    margin: 3rem 0;
+    padding: 2rem;
+    background: linear-gradient(135deg, var(--light-gray) 0%, var(--white) 100%);
+    border-radius: 10px;
+    border-top: 4px solid var(--primary-violet);
+}
+
+.vizzual-responsibilities h3 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--black);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.vizzual-responsibilities strong {
+    color: var(--primary-violet);
+    font-weight: 700;
+}
+
+.responsibilities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.responsibility-item {
+    display: flex;
+    gap: 1rem;
+    padding: 1.5rem;
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border-left: 4px solid var(--gold);
+}
+
+.responsibility-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    border-left-color: var(--primary-violet);
+}
+
+.resp-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--primary-violet), var(--gold));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.resp-content {
+    flex: 1;
+}
+
+.resp-content h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--black);
+    margin-bottom: 0.5rem;
+}
+
+.resp-content p {
+    color: var(--text-gray);
+    margin: 0;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+/* Business Analysis Page Styles */
+.ba-overview {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.ba-intro {
+    margin-bottom: 3rem;
+}
+
+.ba-intro p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-gray);
+    margin-bottom: 1.5rem;
+}
+
+.vizzual-responsibilities-ba {
+    margin: 3rem 0;
+    padding: 2rem;
+    background: linear-gradient(135deg, var(--light-gray) 0%, var(--white) 100%);
+    border-radius: 10px;
+    border-top: 4px solid var(--primary-violet);
+}
+
+.vizzual-responsibilities-ba h3 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--black);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.vizzual-responsibilities-ba strong {
+    color: var(--primary-violet);
+    font-weight: 700;
+}
+
+.ba-responsibilities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.ba-responsibility-item {
+    display: flex;
+    gap: 1rem;
+    padding: 1.5rem;
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border-left: 4px solid var(--gold);
+}
+
+.ba-responsibility-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    border-left-color: var(--primary-violet);
+}
+
+.ba-resp-number {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, var(--primary-violet), var(--gold));
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+.ba-resp-content {
+    flex: 1;
+}
+
+.ba-resp-content p {
+    color: var(--text-gray);
+    margin: 0;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.ba-benefits-detailed {
+    margin: 3rem 0;
+    padding: 2rem;
+    background-color: var(--light-gray);
+    border-radius: 10px;
+    border-left: 4px solid var(--primary-violet);
+}
+
+.ba-benefits-detailed h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--black);
+    margin-bottom: 2rem;
+}
+
+.ba-benefits-detailed p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-gray);
+    margin-bottom: 1.5rem;
+}
+
+.ba-highlight {
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, var(--primary-violet) 0%, var(--gold) 100%);
+    border-radius: 10px;
+    margin-top: 2rem;
+}
+
+.ba-highlight p {
+    color: var(--white);
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+/* Data Analytics Page Styles */
+.da-overview {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.da-intro {
+    margin-bottom: 3rem;
+}
+
+.da-intro p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-gray);
+    margin-bottom: 1.5rem;
+}
+
+.da-benefits-section {
+    margin: 3rem 0;
+    padding: 2rem;
+    background: linear-gradient(135deg, var(--light-gray) 0%, var(--white) 100%);
+    border-radius: 10px;
+    border-top: 4px solid var(--primary-violet);
+}
+
+.da-benefits-section h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--black);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.da-benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.da-benefit-item {
+    background-color: var(--white);
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border-left: 4px solid var(--gold);
+}
+
+.da-benefit-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    border-left-color: var(--primary-violet);
+}
+
+.da-benefit-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.da-benefit-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--primary-violet), var(--gold));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 1.2rem;
+    flex-shrink: 0;
+    margin-top: 0.2rem;
+}
+
+.da-benefit-item h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--black);
+    margin: 0;
+    line-height: 1.3;
+}
+
+.da-benefit-item p {
+    color: var(--text-gray);
+    margin: 1rem 0 0 0;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+/* Excel for Accountants Page Styles */
+.excel-overview {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.excel-intro {
+    margin-bottom: 3rem;
+}
+
+.excel-intro p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-gray);
+    margin-bottom: 1.5rem;
+}
+
+.excel-features {
+    margin: 3rem 0;
+    padding: 2rem;
+    background: linear-gradient(135deg, var(--light-gray) 0%, var(--white) 100%);
+    border-radius: 10px;
+    border-top: 4px solid var(--primary-violet);
+}
+
+.excel-features h3 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--black);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.feature-item {
+    background-color: var(--white);
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    text-align: center;
+    border-left: 4px solid var(--gold);
+}
+
+.feature-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    border-left-color: var(--primary-violet);
+}
+
+.feature-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary-violet), var(--gold));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    color: var(--white);
+    font-size: 1.5rem;
+}
+
+.feature-content h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--black);
+    margin-bottom: 1rem;
+}
+
+.feature-content p {
+    color: var(--text-gray);
+    margin: 0;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.target-audience {
+    margin: 3rem 0;
+    padding: 2rem;
+    background-color: var(--light-gray);
+    border-radius: 10px;
+    border-left: 4px solid var(--primary-violet);
+}
+
+.target-audience h3 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--black);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.audience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.audience-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.audience-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.audience-item i {
+    color: var(--primary-violet);
+    font-size: 1.2rem;
+    width: 20px;
+}
+
+.audience-item span {
+    color: var(--text-gray);
+    font-weight: 500;
+}
+
+/* Power BI Page Styles */
+.powerbi-overview {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.powerbi-intro {
+    margin-bottom: 3rem;
+}
+
+.powerbi-intro p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-gray);
+    margin-bottom: 1.5rem;
+}
+
+.course-structure {
+    margin: 3rem 0;
+    padding: 2rem;
+    background: linear-gradient(135deg, var(--light-gray) 0%, var(--white) 100%);
+    border-radius: 10px;
+    border-top: 4px solid var(--primary-violet);
+}
+
+.course-structure h3 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--black);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.structure-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.structure-item {
+    background-color: var(--white);
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border-left: 4px solid var(--gold);
+}
+
+.structure-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    border-left-color: var(--primary-violet);
+}
+
+.structure-number {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary-violet), var(--gold));
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.structure-content h4 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--black);
+    margin-bottom: 0.5rem;
+}
+
+.structure-content p {
+    color: var(--text-gray);
+    margin: 0 0 1rem 0;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.learning-outcomes {
+    margin: 3rem 0;
+    padding: 2rem;
+    background-color: var(--light-gray);
+    border-radius: 10px;
+    border-left: 4px solid var(--primary-violet);
+}
+
+.learning-outcomes h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--black);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.outcomes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.outcome-item {
+    background-color: var(--white);
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border-left: 4px solid var(--gold);
+}
+
+.outcome-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    border-left-color: var(--primary-violet);
+}
+
+.outcome-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--primary-violet), var(--gold));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.outcome-content h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--black);
+    margin-bottom: 0.5rem;
+}
+
+.outcome-content p {
+    color: var(--text-gray);
+    margin: 0;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.target-audience-pbi {
+    margin: 3rem 0;
+    padding: 2rem;
+    background: linear-gradient(135deg, var(--light-gray) 0%, var(--white) 100%);
+    border-radius: 10px;
+    border-top: 4px solid var(--primary-violet);
+}
+
+.target-audience-pbi h3 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--black);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.audience-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-gray);
+    margin-bottom: 1.5rem;
+}
+
+.requirements {
+    background-color: var(--white);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 2rem 0;
+    border-left: 4px solid var(--gold);
+}
+
+.requirements h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--black);
+    margin-bottom: 1rem;
+}
+
+.requirements ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.requirements li {
+    padding: 0.5rem 0;
+    color: var(--text-gray);
+    position: relative;
+    padding-left: 1.5rem;
+    line-height: 1.6;
+}
+
+.requirements li:before {
+    content: "✓";
+    color: var(--gold);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.certification-info {
+    margin: 3rem 0;
+    padding: 2rem;
+    background: linear-gradient(135deg, var(--primary-violet) 0%, var(--gold) 100%);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.certification-info h3 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 1.5rem;
+}
+
+.certification-info p {
+    color: var(--white);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin: 0;
+    opacity: 0.95;
+}
+
+/* Business Data Analytics Page Styles */
+.bda-overview {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.bda-intro {
+    margin-bottom: 3rem;
+}
+
+.bda-intro p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-gray);
+    margin-bottom: 1.5rem;
+}
+
+.iiba-endorsement {
+    margin: 3rem 0;
+    text-align: center;
+}
+
+.endorsement-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, var(--primary-violet) 0%, var(--gold) 100%);
+    border-radius: 15px;
+    color: var(--white);
+    box-shadow: 0 8px 20px rgba(107, 70, 193, 0.3);
+}
+
+.endorsement-badge i {
+    font-size: 3rem;
+    color: var(--gold);
+}
+
+.endorsement-text h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.endorsement-text p {
+    font-size: 1rem;
+    margin: 0;
+    opacity: 0.9;
+}
+
+.course-description {
+    margin: 3rem 0;
+    padding: 2rem;
+    background-color: var(--light-gray);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.course-description p {
+    font-size: 1.2rem;
+    color: var(--text-gray);
+    margin: 0;
+    line-height: 1.7;
+}
+
+.course-topics {
+    margin: 3rem 0;
+    padding: 2rem;
+    background: linear-gradient(135deg, var(--light-gray) 0%, var(--white) 100%);
+    border-radius: 10px;
+    border-top: 4px solid var(--primary-violet);
+}
+
+.course-topics h3 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--black);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.topics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.topic-item {
+    background-color: var(--white);
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border-left: 4px solid var(--gold);
+}
+
+.topic-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    border-left-color: var(--primary-violet);
+}
+
+.topic-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary-violet), var(--gold));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    color: var(--white);
+    font-size: 1.5rem;
+}
+
+.topic-content h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--black);
+    margin-bottom: 1rem;
+}
+
+.topic-content p {
+    color: var(--text-gray);
+    margin: 0;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.management-discipline {
+    margin: 3rem 0;
+    text-align: center;
+}
+
+.discipline-highlight {
+    display: inline-block;
+    padding: 2rem;
+    background: linear-gradient(135deg, var(--gold) 0%, var(--primary-violet) 100%);
+    border-radius: 15px;
+    color: var(--white);
+    max-width: 600px;
+}
+
+.discipline-highlight h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.discipline-highlight p {
+    font-size: 1.1rem;
+    margin: 0;
+    line-height: 1.7;
+}
+
+.discipline-highlight strong {
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+.target-audience-bda {
+    margin: 3rem 0;
+    padding: 2rem;
+    background-color: var(--light-gray);
+    border-radius: 10px;
+    border-left: 4px solid var(--primary-violet);
+}
+
+.target-audience-bda h3 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--black);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.audience-content p {
+    font-size: 1.1rem;
+    color: var(--text-gray);
+    margin-bottom: 1.5rem;
+}
+
+.audience-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.audience-type {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.audience-type:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.audience-type i {
+    color: var(--primary-violet);
+    font-size: 1.2rem;
+    width: 20px;
+}
+
+.audience-type span {
+    color: var(--text-gray);
+    font-weight: 500;
+}
+
+.certification-section {
+    margin: 3rem 0;
+    padding: 2rem;
+    background: linear-gradient(135deg, var(--light-gray) 0%, var(--white) 100%);
+    border-radius: 10px;
+    border-top: 4px solid var(--primary-violet);
+}
+
+.certification-section h3 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--black);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.certification-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-gray);
+    margin-bottom: 2rem;
+}
+
+.cbda-cert {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    padding: 2rem;
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid var(--gold);
+}
+
+.cert-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--gold), var(--primary-violet));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.cert-text h4 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--black);
+    margin-bottom: 1rem;
+}
+
+.cert-text p {
+    color: var(--text-gray);
+    margin: 0;
+    line-height: 1.7;
+    font-size: 1rem;
+}
+
+.learning-outcomes-bda {
+    margin: 3rem 0;
+    padding: 2rem;
+    background-color: var(--light-gray);
+    border-radius: 10px;
+    border-left: 4px solid var(--primary-violet);
+}
+
+.learning-outcomes-bda h3 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--black);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.outcomes-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.outcome-bda-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.outcome-bda-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.outcome-bda-item i {
+    color: var(--primary-violet);
+    font-size: 1.2rem;
+    width: 20px;
+}
+
+.outcome-bda-item span {
+    color: var(--text-gray);
+    font-weight: 500;
+}
+
+.course-requirements {
+    margin: 3rem 0;
+    padding: 2rem;
+    background: linear-gradient(135deg, var(--primary-violet) 0%, var(--gold) 100%);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.course-requirements h3 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 1.5rem;
+}
+
+.requirements-content p {
+    color: var(--white);
+    font-size: 1.2rem;
+    margin: 0;
+    line-height: 1.7;
+}
+
+.requirements-content strong {
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+/* ITIL Foundation Page Styles */
+.itil-overview {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.itil-intro {
+    margin-bottom: 3rem;
+}
+
+.itil-intro p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-gray);
+    margin-bottom: 1.5rem;
+}
+
+.itil-learning {
+    margin: 3rem 0;
+    padding: 2rem;
+    background: linear-gradient(135deg, var(--light-gray) 0%, var(--white) 100%);
+    border-radius: 10px;
+    border-top: 4px solid var(--primary-violet);
+}
+
+.itil-learning h3 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--black);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.learning-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.learning-item {
+    background-color: var(--white);
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border-left: 4px solid var(--gold);
+}
+
+.learning-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    border-left-color: var(--primary-violet);
+}
+
+.learning-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary-violet), var(--gold));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    color: var(--white);
+    font-size: 1.5rem;
+}
+
+.learning-content h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--black);
+    margin-bottom: 1rem;
+}
+
+.learning-content p {
+    color: var(--text-gray);
+    margin: 0;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.itil-methodology {
+    margin: 3rem 0;
+    text-align: center;
+}
+
+.methodology-highlight {
+    display: inline-block;
+    padding: 2rem;
+    background: linear-gradient(135deg, var(--gold) 0%, var(--primary-violet) 100%);
+    border-radius: 15px;
+    color: var(--white);
+    max-width: 600px;
+}
+
+.methodology-highlight h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.methodology-highlight p {
+    font-size: 1.1rem;
+    margin: 0;
+    line-height: 1.7;
+}
+
+.target-audience-itil {
+    margin: 3rem 0;
+    padding: 2rem;
+    background-color: var(--light-gray);
+    border-radius: 10px;
+    border-left: 4px solid var(--primary-violet);
+}
+
+.target-audience-itil h3 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--black);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.audience-types {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.audience-category {
+    background-color: var(--white);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.audience-category:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.audience-category h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--primary-violet);
+    margin-bottom: 1rem;
+}
+
+.audience-category p {
+    color: var(--text-gray);
+    margin: 0;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.certification-prep {
+    margin: 3rem 0;
+    padding: 2rem;
+    background: linear-gradient(135deg, var(--light-gray) 0%, var(--white) 100%);
+    border-radius: 10px;
+    border-top: 4px solid var(--primary-violet);
+}
+
+.certification-prep h3 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--black);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.cert-prep-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-gray);
+    margin: 0;
+    text-align: center;
+}
+
+.it-professionals {
+    margin: 3rem 0;
+    padding: 2rem;
+    background-color: var(--light-gray);
+    border-radius: 10px;
+    border-left: 4px solid var(--primary-violet);
+}
+
+.it-professionals h3 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--black);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.it-professionals p {
+    font-size: 1.1rem;
+    color: var(--text-gray);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.professionals-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.professional-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.professional-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.professional-item i {
+    color: var(--primary-violet);
+    font-size: 1.2rem;
+    width: 20px;
+}
+
+.professional-item span {
+    color: var(--text-gray);
+    font-weight: 500;
+}
+
+.learning-outcomes-itil {
+    margin: 3rem 0;
+    padding: 2rem;
+    background: linear-gradient(135deg, var(--light-gray) 0%, var(--white) 100%);
+    border-radius: 10px;
+    border-top: 4px solid var(--primary-violet);
+}
+
+.learning-outcomes-itil h3 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--black);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.outcomes-numbered {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.outcome-numbered-item {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    align-items: flex-start;
+}
+
+.outcome-numbered-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.outcome-number {
+    width: 30px;
+    height: 30px;
+    background: linear-gradient(135deg, var(--primary-violet), var(--gold));
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+    margin-top: 0.2rem;
+}
+
+.outcome-numbered-item span {
+    color: var(--text-gray);
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.course-requirements-itil {
+    margin: 3rem 0;
+    padding: 2rem;
+    background: linear-gradient(135deg, var(--primary-violet) 0%, var(--gold) 100%);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.course-requirements-itil h3 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 1.5rem;
+}
+
+.requirements-content-itil ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    display: inline-block;
+}
+
+.requirements-content-itil li {
+    padding: 0.5rem 0;
+    color: var(--white);
+    position: relative;
+    padding-left: 1.5rem;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.requirements-content-itil li:before {
+    content: "✓";
+    color: var(--gold);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+/* Project Management Page Styles */
+.pm-overview {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.pm-intro {
+    margin-bottom: 3rem;
+}
+
+.pm-intro p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-gray);
+    margin-bottom: 1.5rem;
+}
+
+.pm-program {
+    margin: 3rem 0;
+    text-align: center;
+}
+
+.program-highlight {
+    display: inline-block;
+    padding: 2rem;
+    background: linear-gradient(135deg, var(--primary-violet) 0%, var(--gold) 100%);
+    border-radius: 15px;
+    color: var(--white);
+    max-width: 600px;
+}
+
+.program-highlight h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.program-highlight p {
+    font-size: 1.1rem;
+    margin: 0;
+    line-height: 1.7;
+}
+
+.critical-lessons {
+    margin: 3rem 0;
+    padding: 2rem;
+    background: linear-gradient(135deg, var(--light-gray) 0%, var(--white) 100%);
+    border-radius: 10px;
+    border-top: 4px solid var(--primary-violet);
+}
+
+.critical-lessons h3 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--black);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.lessons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.lesson-item {
+    background-color: var(--white);
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border-left: 4px solid var(--gold);
+}
+
+.lesson-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    border-left-color: var(--primary-violet);
+}
+
+.lesson-number {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--primary-violet), var(--gold));
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.lesson-content h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--black);
+    margin-bottom: 1rem;
+}
+
+.lesson-content p {
+    color: var(--text-gray);
+    margin: 0;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.career-advancement {
+    margin: 3rem 0;
+    text-align: center;
+}
+
+.advancement-highlight {
+    display: inline-block;
+    padding: 2rem;
+    background: linear-gradient(135deg, var(--gold) 0%, var(--primary-violet) 100%);
+    border-radius: 15px;
+    color: var(--white);
+    max-width: 500px;
+}
+
+.advancement-highlight h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.advancement-highlight p {
+    font-size: 1.1rem;
+    margin: 0;
+    line-height: 1.7;
+}
+
+/* Overview Pages Styles */
+.overview-intro {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.overview-intro h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--black);
+}
+
+.overview-intro p {
+    font-size: 1.2rem;
+    color: var(--text-gray);
+    max-width: 800px;
+    margin: 0 auto 1rem;
+    line-height: 1.7;
+}
+
+/* Services Overview Grid */
+.services-grid-overview {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.service-card-overview {
+    background-color: var(--white);
+    border: 2px solid var(--border-gray);
+    border-radius: 10px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card-overview:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border-color: var(--primary-violet);
+}
+
+.service-card-overview .service-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary-violet), var(--gold));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    color: var(--white);
+    font-size: 1.5rem;
+}
+
+.service-card-overview h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--black);
+}
+
+.service-card-overview p {
+    color: var(--text-gray);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.service-features-list ul,
+.service-benefits-list ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1.5rem;
+}
+
+.service-features-list li,
+.service-benefits-list li {
+    padding: 0.25rem 0;
+    color: var(--text-gray);
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.service-features-list li:before {
+    content: "✓";
+    color: var(--gold);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.service-benefits-list h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--black);
+}
+
+.btn-service {
+    display: inline-block;
+    background-color: var(--primary-violet);
+    color: var(--white);
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+.btn-service:hover {
+    background-color: var(--dark-violet);
+    transform: translateY(-2px);
+}
+
+/* Training Overview Grid */
+.training-grid-overview {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.training-card-overview {
+    background-color: var(--white);
+    border: 2px solid var(--border-gray);
+    border-radius: 10px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.training-card-overview:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border-color: var(--primary-violet);
+}
+
+.training-card-overview .training-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary-violet), var(--gold));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    color: var(--white);
+    font-size: 1.5rem;
+}
+
+.training-card-overview h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--black);
+    line-height: 1.3;
+}
+
+.training-card-overview p {
+    color: var(--text-gray);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.course-details-training {
+    background-color: var(--light-gray);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.25rem 0;
+    border-bottom: 1px solid var(--border-gray);
+}
+
+.detail-row:last-child {
+    border-bottom: none;
+}
+
+.detail-label {
+    font-weight: 600;
+    color: var(--black);
+    font-size: 0.9rem;
+}
+
+.detail-value {
+    color: var(--text-gray);
+    font-size: 0.9rem;
+}
+
+.training-features h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: var(--black);
+}
+
+.training-features ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1.5rem;
+}
+
+.training-features li {
+    padding: 0.25rem 0;
+    color: var(--text-gray);
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.training-features li:before {
+    content: "•";
+    color: var(--gold);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.btn-training {
+    display: inline-block;
+    background-color: var(--primary-violet);
+    color: var(--white);
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+.btn-training:hover {
+    background-color: var(--dark-violet);
+    transform: translateY(-2px);
+}
+
+/* Why Choose Us / Training Benefits */
+.why-choose-us,
+.training-benefits {
+    padding: 4rem 0;
+    background-color: var(--light-gray);
+    margin: 3rem 0;
+}
+
+.why-choose-us h2,
+.training-benefits h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--black);
+}
+
+.why-choose-grid,
+.training-benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.why-choose-item,
+.training-benefit-item {
+    text-align: center;
+    padding: 2rem 1rem;
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.why-choose-icon,
+.training-benefit-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--primary-violet), var(--gold));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    color: var(--white);
+    font-size: 2rem;
+}
+
+.why-choose-item h3,
+.training-benefit-item h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--black);
+}
+
+.why-choose-item p,
+.training-benefit-item p {
+    color: var(--text-gray);
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Group Training Section */
+.group-training {
+    background: linear-gradient(135deg, var(--primary-violet) 0%, var(--dark-violet) 100%);
+    color: var(--white);
+    padding: 3rem 0;
+    text-align: center;
+    margin: 3rem 0;
+}
+
+.group-training h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.group-training p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.group-benefits {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.group-benefit {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    backdrop-filter: blur(10px);
+}
+
+.group-benefit i {
+    color: var(--gold);
+}
+
+/* Services/Training CTA */
+.services-cta,
+.training-cta {
+    background: linear-gradient(135deg, var(--primary-violet) 0%, var(--dark-violet) 100%);
+    color: var(--white);
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.services-cta h2,
+.training-cta h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.services-cta p,
+.training-cta p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+/* Training Course Mobile Styles */
+@media (max-width: 480px) {
+    .module-header {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+    
+    .module-header h3 {
+        font-size: 1.1rem;
+    }
+    
+    .course-modules h2 {
+        font-size: 2rem;
+    }
+    
+    .detail-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .hero {
+        padding: 4rem 0;
+    }
+    
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn {
+        width: 100%;
+        max-width: 250px;
+    }
+    
+    .about,
+    .services-preview {
+        padding: 3rem 0;
+    }
+}
