@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Vizzual Consult</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* About Page Custom Styles */
+        .about-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #f8f9fa;
+        }
+
+        .hero-description {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: space-around;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #ffd700;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            margin-top: 5px;
+            opacity: 0.9;
+        }
+
+        .company-overview {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .overview-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .overview-text h2 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+
+        .overview-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: #555;
+            text-align: justify;
+        }
+
+        .overview-visual {
+            display: grid;
+            gap: 20px;
+        }
+
+        .visual-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .visual-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .visual-card i {
+            font-size: 3rem;
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+
+        .visual-card h3 {
+            font-size: 1.3rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .visual-card p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .mission-vision {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .mission-vision-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .mission-card {
+            background: #f8f9fa;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            border-left: 5px solid #667eea;
+            transition: all 0.3s ease;
+        }
+
+        .mission-card:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-5px);
+        }
+
+        .card-icon {
+            width: 80px;
+            height: 80px;
+            background: #667eea;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+
+        .mission-card:hover .card-icon {
+            background: white;
+            color: #667eea;
+        }
+
+        .card-icon i {
+            font-size: 2rem;
+            color: white;
+        }
+
+        .mission-card:hover .card-icon i {
+            color: #667eea;
+        }
+
+        .mission-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        .mission-card:hover h3 {
+            color: white;
+        }
+
+        .mission-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .mission-card:hover p {
+            color: rgba(255,255,255,0.9);
+        }
+
+        .why-choose-us {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+
+        .feature-icon i {
+            font-size: 2rem;
+            color: white;
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .feature-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .about-cta {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .cta-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: #667eea;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #5a67d8;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: #2c3e50;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .overview-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .mission-vision-grid,
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cta-content h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="VizzualConsult.jpg" alt="Vizzual Consult Logo" class="logo-img">
+            </div>
+
+            <!-- Desktop Navigation -->
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li class="dropdown">
+                        <a href="consultancy-services.html">Consultancy Services <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="information-systems-control.html">Information Systems Control and Auditing</a>
+                            <a href="it-project-management.html">IT Project Management</a>
+                            <a href="business-analysis.html">Business Analysis</a>
+                            <a href="data-analytics.html">Data Analytics</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="training-courses.html">Training Programmes <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="excel-accountants.html">Microsoft Excel for Accountants, Auditors, Bankers, and Insurers</a>
+                            <a href="advanced-excel.html">Advanced Excel for Data Analytics</a>
+                            <a href="power-bi.html">Microsoft Power BI</a>
+                            <a href="business-data-analytics.html">Business Data Analytics</a>
+                            <a href="itil-foundation.html">IT Service Management with ITIL 4 Foundation</a>
+                            <a href="project-management.html">Project Management</a>
+
+                        </div>
+                    </li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+
+            <!-- Hamburger Menu -->
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <nav class="mobile-nav" id="mobile-nav">
+            <div class="mobile-nav-content">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li class="mobile-dropdown">
+                        <a href="consultancy-services.html" class="mobile-dropdown-toggle">Consultancy Services <i class="fas fa-plus"></i></a>
+                        <div class="mobile-dropdown-content">
+                            <a href="information-systems-control.html">Information Systems Control and Auditing</a>
+                            <a href="it-project-management.html">IT Project Management</a>
+                            <a href="business-analysis.html">Business Analysis</a>
+                            <a href="data-analytics.html">Data Analytics</a>
+
+                        </div>
+                    </li>
+                    <li class="mobile-dropdown">
+                        <a href="training-courses.html" class="mobile-dropdown-toggle">Training Programmes <i class="fas fa-plus"></i></a>
+                        <div class="mobile-dropdown-content">
+                            <a href="excel-accountants.html">Microsoft Excel for Accountants, Auditors, Bankers, and Insurers</a>
+                            <a href="advanced-excel.html">Advanced Excel for Data Analytics</a>
+                            <a href="power-bi.html">Microsoft Power BI</a>
+                            <a href="business-data-analytics.html">Business Data Analytics</a>
+                            <a href="itil-foundation.html">IT Service Management with ITIL 4 Foundation</a>
+                            <a href="project-management.html">Project Management</a>
+
+                        </div>
+                    </li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="about-hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1>About Vizzual Consult</h1>
+                        <p class="hero-subtitle">Empowering Excellence Through Innovation & Expertise</p>
+                        <p class="hero-description">
+                            Vizzual IT Consult & Training Centre is your premier partner for cutting-edge technology solutions and career-focused IT training. We bridge the gap between business challenges and technological innovation.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Company Overview -->
+        <section class="company-overview">
+            <div class="container">
+                <div class="overview-content">
+                    <div class="overview-text">
+                        <h2>Who We Are</h2>
+                        <p>
+                            <strong>VIZZUAL CONSULT</strong> is a premier organization offering world-class IT consultancy and professional training services. Our comprehensive consultancy services include Information Systems Control and Auditing, Information Technology Project Management, Business Analysis, Data Analytics, and Financial Auditing, providing organizations with expert guidance across critical business domains.
+                        </p>
+                        <p>
+                            Our training programmes span essential areas such as Microsoft Excel for Accountants, Auditors, Bankers, and Insurers, Advanced Excel for Data Analytics, Microsoft Power BI, and Tally Accounting Software, ensuring professionals gain practical skills relevant to their specific industry needs.
+                        </p>
+                        <p>
+                            <strong>VIZZUAL</strong> is branded with a reputable record of accomplishment for customer service satisfaction. Our team consists of certified experts with extensive industry experience and globally proven track records, bringing deep expertise and practical insights to every engagement.
+                        </p>
+                    </div>
+                    <div class="overview-visual">
+                        <div class="visual-card">
+                            <i class="fas fa-chart-line"></i>
+                            <h3>Excellence</h3>
+                            <p>Committed to delivering exceptional results</p>
+                        </div>
+                        <div class="visual-card">
+                            <i class="fas fa-users"></i>
+                            <h3>Expertise</h3>
+                            <p>Deep industry knowledge and experience</p>
+                        </div>
+                        <div class="visual-card">
+                            <i class="fas fa-lightbulb"></i>
+                            <h3>Innovation</h3>
+                            <p>Cutting-edge solutions for modern challenges</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission Vision Values -->
+        <section class="mission-vision">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Our Foundation</h2>
+                    <p>Guiding Principles That Drive Our Success</p>
+                </div>
+                <div class="mission-vision-grid">
+                    <div class="mission-card">
+                        <div class="card-icon">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <h3>Our Mission</h3>
+                        <p>To empower organizations and professionals with innovative IT solutions and world-class training that drives sustainable growth and technological advancement.</p>
+                    </div>
+                    <div class="mission-card">
+                        <div class="card-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <h3>Our Vision</h3>
+                        <p>To be the leading IT consultancy and training provider in Africa, setting standards for excellence and innovation in technology solutions.</p>
+                    </div>
+                    <div class="mission-card">
+                        <div class="card-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3>Our Values</h3>
+                        <p>Excellence, Integrity, Innovation, Customer Satisfaction, and Continuous Learning form the cornerstone of everything we do.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us -->
+        <section class="why-choose-us">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Why Choose Vizzual Consult?</h2>
+                    <p>Discover What Sets Us Apart</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <h3>Certified Professionals</h3>
+                        <p>Our team consists of certified experts with extensive industry experience and globally proven track records.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3>Customized Solutions</h3>
+                        <p>We tailor our IT solutions to meet your specific business needs and objectives.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3>Timely Delivery</h3>
+                        <p>We understand the importance of timelines and deliver our services within agreed schedules.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <h3>Measurable Results</h3>
+                        <p>We focus on delivering tangible outcomes that positively impact your business performance.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3>24/7 Support</h3>
+                        <p>Our dedicated support team ensures continuous assistance and guidance throughout your journey.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h3>Global Standards</h3>
+                        <p>We adhere to international best practices and global standards in all our services.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="about-cta">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Ready to Transform Your Business?</h2>
+                    <p>Join hundreds of satisfied clients who have chosen Vizzual Consult for their IT solutions and training needs.</p>
+                    <div class="cta-buttons">
+                        <a href="consultancy-services.html" class="btn btn-primary">Our Consultancy Services</a>
+                        <a href="contact.html" class="btn btn-secondary">Get Started</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="VizzualConsult.jpg" alt="Vizzual Consult Logo" class="footer-logo-img">
+                        <h3>Vizzual Consult</h3>
+                    </div>
+                    <p>Professional IT consultancy and training services for organizations and individuals seeking excellence and growth.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="consultancy-services.html">Consultancy Services</a></li>
+                        <li><a href="training-courses.html">Training Programmes</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="information-systems-control.html">Information Systems Control</a></li>
+                        <li><a href="it-project-management.html">IT Project Management</a></li>
+                        <li><a href="business-analysis.html">Business Analysis</a></li>
+                        <li><a href="data-analytics.html">Data Analytics</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> +233 (0) 530538706</p>
+                        <p><i class="fas fa-envelope"></i> info@vizzualconsult.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Accra, Ghana</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Vizzual Consult. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
