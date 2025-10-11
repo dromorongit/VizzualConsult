@@ -3,26 +3,28 @@ document.addEventListener('DOMContentLoaded', function() {
     // Hamburger Menu Toggle
     const hamburger = document.getElementById('hamburger');
     const mobileNav = document.getElementById('mobile-nav');
-    
+
+    console.log('Hamburger:', hamburger); // Debug log
+    console.log('Mobile Nav:', mobileNav); // Debug log
+
     if (hamburger && mobileNav) {
-        hamburger.addEventListener('click', function() {
+        hamburger.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            console.log('Hamburger clicked'); // Debug log
+
+            // Toggle classes
             mobileNav.classList.toggle('active');
-            
-            // Animate hamburger
             hamburger.classList.toggle('active');
-            
-            // Change hamburger to X when active
-            const spans = hamburger.querySelectorAll('span');
-            if (hamburger.classList.contains('active')) {
-                spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
-                spans[1].style.opacity = '0';
-                spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
-            } else {
-                spans[0].style.transform = 'none';
-                spans[1].style.opacity = '1';
-                spans[2].style.transform = 'none';
-            }
+
+            // Let CSS handle the hamburger animation
+            console.log('Mobile nav active:', mobileNav.classList.contains('active')); // Debug log
         });
+    } else {
+        console.log('Hamburger or Mobile Nav not found'); // Debug log
+        console.log('Hamburger element:', hamburger);
+        console.log('Mobile Nav element:', mobileNav);
     }
     
     // Close mobile nav when clicking outside or on backdrop
