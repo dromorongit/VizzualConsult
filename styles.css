@@ -125,6 +125,12 @@ body {
     flex-direction: column;
     cursor: pointer;
     padding: 0.5rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.hamburger:hover {
+    background-color: var(--light-gray);
 }
 
 .hamburger span {
@@ -142,20 +148,34 @@ body {
     position: fixed;
     top: 0;
     left: -100%;
-    width: 300px;
+    width: 280px;
     height: 100vh;
     background-color: var(--white);
     z-index: 1002;
     transition: left 0.3s ease;
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
 }
 
 .mobile-nav.active {
+    display: block;
     left: 0;
 }
 
+/* Mobile Navigation Backdrop */
+.mobile-nav.active::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
 .mobile-nav-content {
-    padding: 5rem 1rem 1rem;
+    padding: 4rem 1rem 1rem;
 }
 
 .mobile-nav ul {
@@ -201,6 +221,18 @@ body {
 
 .mobile-dropdown-content.active {
     display: block;
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .mobile-dropdown-content a {
@@ -925,9 +957,23 @@ main {
     .desktop-nav {
         display: none;
     }
-    
+
     .hamburger {
         display: flex;
+    }
+
+    /* Ensure mobile nav works on touch devices */
+    .mobile-nav {
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .mobile-nav a {
+        padding: 1rem;
+        border-bottom: 1px solid var(--border-gray);
+    }
+
+    .mobile-nav li:last-child a {
+        border-bottom: none;
     }
     
     .hero-content h1 {

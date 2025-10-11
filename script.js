@@ -25,13 +25,13 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Close mobile nav when clicking outside
+    // Close mobile nav when clicking outside or on backdrop
     document.addEventListener('click', function(event) {
         if (mobileNav && mobileNav.classList.contains('active')) {
             if (!mobileNav.contains(event.target) && !hamburger.contains(event.target)) {
                 mobileNav.classList.remove('active');
                 hamburger.classList.remove('active');
-                
+
                 // Reset hamburger
                 const spans = hamburger.querySelectorAll('span');
                 spans[0].style.transform = 'none';
